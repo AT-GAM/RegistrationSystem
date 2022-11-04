@@ -14,8 +14,7 @@ let user = {
     city: "",
     state: "",
     favouritesGames: [
-        `<h2 class="bg-darg col-12 m-auto text-warning m-auto">your favourites games </h2>
-        `
+        
     ],
 
 
@@ -68,6 +67,7 @@ async function callApi(groupGames) {
             }
             creatCards();
             creatHome();
+            checkUserHasLoged();
             creatfavouritesLayer();
 
 
@@ -268,14 +268,15 @@ let arryofcards = []
 function creatCards() {
     arryofcards = [];
     for (let i = 0; i < arryOfGames.length; i++) {
-        arryofcards.push(`<div class="col-lg-3 col-md-6">
-    <div class="card${checkFavouritesGames(arryOfGames[i]) ? "bg-warning" : ""}" >
+        arryofcards.push({nameOfGame:arryOfGames[i].name,
+            gameHtml:`<div class="col-lg-3 col-md-6">
+    <div class="card${checkFavouritesGames(arryOfGames[i]) ? " bg-warning" : ""}" >
         <img style="height:171px;" src="${arryOfGames[i].background_image}" class="w-100 card-img-top" alt="Borderlands 3">
         <div class="card-body">
           <h5 class="card-title">${arryOfGames[i].name}</h5>
           <button type="button" onclick="makeItfavorite(${i})" class="btn ${checkFavouritesGames(arryOfGames[i]) ? "disabled" : ""} disabled btn-warning">Add to favorite</button>
         </div>
-      </div>`)
+      </div>`})
 
     }
 
@@ -284,7 +285,7 @@ function creatCards() {
 function creatHome() {
     document.querySelector("section.home .container .row ").innerHTML = "";
     for (const card of arryofcards) {
-        document.querySelector("section.home .container .row ").innerHTML += card;
+        document.querySelector("section.home .container .row ").innerHTML += card.gameHtml;
 
     }
 
@@ -296,7 +297,7 @@ function creatfavouritesLayer() {
     content.innerHTML = "";
 
     for (const game of user.favouritesGames) {
-        content.innerHTML += game
+        content.innerHTML += game.gameHtml;
     }
 
 
@@ -306,11 +307,16 @@ function creatfavouritesLayer() {
 function checkFavouritesGames(game) {
     
         for (const fGame of user.favouritesGames) {
-            if (fGame == game) {
+            if (fGame.nameOfGame == game.nameOfGame) {
+                
                 return true;
             }
+    
+
+
 
         }
+
         return false;
     
 
@@ -324,7 +330,7 @@ function makeItfavorite(i) {
 
     user.favouritesGames.push(arryofcards[i]);
     localStorage.setItem("allUsers", JSON.stringify(arryOfUsers));
-    allCards[i].classList.add("bg-warning");
+    allCards[i].classList.add( "bg-warning");
     allCardButton[i].classList.add("disabled")
     creatfavouritesLayer();
 
@@ -401,6 +407,7 @@ document.querySelector("nav .container ul li button.btn.btn-warning.logout").add
     loginStatu = false;
     checkUserHasLoged();
     document.querySelector("h1").innerHTML = "";
+    creatHome();
     chaneHomePage();
     callApi(presetGroupGames);
 });
