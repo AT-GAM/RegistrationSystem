@@ -5,18 +5,22 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Css/all.css">
   <link rel="stylesheet" href="Css/bootstrap.min.css">
   <link rel="stylesheet" href="Css/Style.css">
   <title>We love all Games</title>
 </head>
 
 <body>
+  <div class="position-fixed top-0 bottom-0 start-0 end-0 bg-black bg-opacity-75 d-flex justify-content-center align-items-center  waitingApiLayer">
+    <i class="fa-solid fa-spinner fa-spin-pulse fa-3x text-white"></i>
+
+  </div>
   <header>
-    <nav class="navbar navbar-expand-lg bg-dark">
+    <nav class="navbar  bg-dark">
       <div class="container">
         <a class="navbar-brand text-white" href="#home">We all love Games</a>
-        <div class="collapse buttons navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar ms-auto mb-2 mb-lg-0">
+          <ul class="navbar ms-auto buttons mb-2 mb-lg-0">
             <li class="nav-item">
               <button type="button " class="btn  btn-dark login">
                 Login
@@ -40,7 +44,7 @@
 
           </ul>
 
-        </div>
+        
       </div>
     </nav>
 
@@ -84,10 +88,10 @@
   <!-- this layer user will use it to registre   -->
   <div
     class="registration layer d-none bg-secondary position-fixed top-0 d-flex justify-content-center align-items-center bottom-0 start-0  end-0 bg-opacity-25 ">
-    <div class="w-25 bg-black rounded-5 border-light border-4 p-3 text-white    ">
+    <div class=" bg-black rounded-5 border-light border-4 p-3 text-white si_ze    ">
       <form>
         <div class="text-center">
-          <h2 class="m-auto w-50  text-white shadow showing">Registration</h2>
+          <h5 class=" w-25  text-white shadow showing">Registration</h5>
         </div>
         <div class="form-row">
           <div class="col-md-12">
@@ -381,7 +385,7 @@
   <!-- this layer to make user login to website  -->
   <div
     class="layer logIn position-fixed align-items-center d-none justify-content-center d-flex bg-opacity-25 top-0 bottom-0 start-0 end-0 bg-secondary  ">
-    <div class="bg-black w-25 p-3  rounded-5">
+    <div class="bg-black  p-3 si_ze  rounded-5">
       <h2 class="text-center text-white shadow mb-3">Login</h2>
       <form>
         <div class="form-group text-white">
@@ -432,6 +436,7 @@
 
 
     <script src="Js/bootstrap.bundle.min.js"></script>
+    <script src="Js/jquery-3.6.1.js"></script>
     <script src="Js/main.js"></script>
 
 </body>
