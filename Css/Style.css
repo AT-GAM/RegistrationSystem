@@ -1,44 +1,49 @@
-.waitingApiLayer{
-    z-index: 99999999999;
+.waitingApiLayer {
+    z-index: 99999999999F;
 }
-button{
+
+button {
     cursor: pointer;
 
 }
-.registration div.si_ze{
+
+.registration div.si_ze {
     width: 25%;
 }
 
-.logIn div.si_ze{
+.logIn div.si_ze {
     width: 25%;
 }
 
 /* Small  (landscape phones, 576px and up)*/
 @media (min-width: 0px) {
-     .registration div.si_ze{
-    width: 75%;
-}
+    .registration div.si_ze {
+        width: 75%;
+    }
 
-.logIn div.si_ze{
-    width: 75%;
-} }
+    .logIn div.si_ze {
+        width: 75%;
+    }
+}
 
 /* Medium devices (tablets, 768px and up)*/
-@media (min-width: 768px) { .registration div.si_ze{
-    width: 50%;
-}
+@media (min-width: 768px) {
+    .registration div.si_ze {
+        width: 50%;
+    }
 
-.logIn div.si_ze{
-    width: 50%;
-} }
+    .logIn div.si_ze {
+        width: 50%;
+    }
+}
 
 /* Large devices (desktops, 992px and up)*/
-@media (min-width: 992px) { .registration div.si_ze{
-    width: 25%;
-}
+@media (min-width: 992px) {
+    .registration div.si_ze {
+        width: 25%;
+    }
 
-.logIn div.si_ze{
-    width: 25%;
+    .logIn div.si_ze {
+        width: 25%;
+    }
 }
- }
-

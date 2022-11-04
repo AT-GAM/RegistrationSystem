@@ -57,7 +57,7 @@ $(document).ready(function () {
 
 
                 $(".waitingApiLayer").removeClass("d-none");
-                
+
                 if (prevGroupGames == null) {
 
                     if (!prevButton.classList.contains("disabled")) prevButton.classList.add("disabled");
@@ -79,8 +79,8 @@ $(document).ready(function () {
                 creatCards();
                 creatHome();
                 // waiting layer to make user know that we get the api
-                
-                $(".waitingApiLayer").css("display","block");
+
+                $(".waitingApiLayer").css("display", "block");
 
                 $(".waitingApiLayer").fadeOut(1000, function () {
                     $(".waitingApiLayer").addClass("d-none")
